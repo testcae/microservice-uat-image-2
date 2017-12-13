@@ -115,13 +115,26 @@ public class uatTestImage extends RESTService {
        JSONObject result = new JSONObject();
        return Response.status(HttpURLConnection.HTTP_INTERNAL_ERROR).entity("Cannot convert json to object").build();
    }
-    // responseImage
-    boolean responseImage_condition = true;
-    if(responseImage_condition) {
-      String resultImage = "Some String";
-      return Response.status(HttpURLConnection.HTTP_OK).entity(resultImage).build();
+    try { 
+        Connection conn = service.dbm.getConnection();
+        PreparedStatement query = conn.prepareStatement(
+          "INSERT INTO uatTest.tblImage(imageName, imageUrl) VALUES(?,?) ");
+        query.setString(1, payloadpayloadPostImageObject.getimageName());
+        query.setString(2, payloadpayloadPostImageObject.getimageUrl());
+        query.executeUpdate();
+
+        // get id of the new added image
+        ResultSet generatedKeys = query.getGeneratedKeys();
+        if (generatedKeys.next()) {
+          return Response.status(HttpURLConnection.HTTP_OK).entity(generatedKeys.getLong(1)).build();
+        } else {
+          return Response.status(HttpURLConnection.HTTP_OK).entity(0).build();
+        }
+    } catch(Exception e) {
+      e.printStackTrace();
+      return Response.status(HttpURLConnection.HTTP_INTERNAL_ERROR).entity(0).build();
     }
-    return null;
+
   }
 
   /**
