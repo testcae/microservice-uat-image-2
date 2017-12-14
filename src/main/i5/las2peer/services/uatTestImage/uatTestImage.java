@@ -128,7 +128,7 @@ public class uatTestImage extends RESTService {
    * 
    */
   @POST
-  @Path("//image")
+  @Path("/image")
   @Produces(MediaType.APPLICATION_JSON)
   @Consumes(MediaType.TEXT_PLAIN)
   @ApiResponses(value = {

@@ -124,7 +124,7 @@ public class uatTestImageTest {
     try {
       JSONObject imageData = new JSONObject();
       c.setLogin(testAgent.getIdentifier(), testPass);
-      ClientResponse result = c.sendRequest("POST", mainPath + "//image", imageData.toJSONString(),
+      ClientResponse result = c.sendRequest("POST", mainPath + "/image", imageData.toJSONString(),
         MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON, new HashMap<String,String>());
       assertTrue(true); // change here
       System.out.println("Result of 'testpostImage': " + result.getResponse().trim());
