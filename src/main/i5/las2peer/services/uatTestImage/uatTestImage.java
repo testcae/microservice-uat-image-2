@@ -161,7 +161,7 @@ public class uatTestImage extends RESTService {
         Connection conn = service.dbm.getConnection();
         PreparedStatement query = conn.prepareStatement(
           "INSERT INTO uatTest.tblImage(imageName, imageUrl) VALUES(?,?) ");
-        query.setString(1, payloadpayloadPostImageObject.getimageName());
+        query.setString(1, payloadimageDataObject.getimageName());
         query.setString(2, payloadpayloadPostImageObject.getimageUrl());
         query.executeUpdate();
 
