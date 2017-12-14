@@ -77,9 +77,9 @@ public class uatTestImage extends RESTService {
 
   @Api
   @SwaggerDefinition(
-      info = @Info(title = "uat-image-2", version = "",
-          description = "",
-          termsOfService = "",
+      info = @Info(title = "uat-image-2", version = "1.0.0-alpha-4.24929282249348",
+          description = "this is a fancy image service for the fancy music service",
+          termsOfService = "LICENSE.txt",
           contact = @Contact(name = "Melisa Cecilia", email = "CAEAddress@gmail.com") ,
           license = @License(name = "BSD",
               url = "https://github.com/testcae/microservice-uat-image-2/blob/master/LICENSE.txt") ) )
