@@ -90,50 +90,6 @@ public class uatTestImageTest {
   }
 
 
-  /**
-   * 
-   * Test for the postImage method.
-   * 
-   */
-  @Test
-  public void testpostImage() {
-    MiniClient c = new MiniClient();
-    c.setAddressPort(HTTP_ADDRESS, HTTP_PORT);
-    try {
-      JSONObject payloadImage = new JSONObject();
-      c.setLogin(testAgent.getIdentifier(), testPass);
-      ClientResponse result = c.sendRequest("POST", mainPath + "/post", payloadImage.toJSONString(),
-        MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN, new HashMap<String,String>());
-      assertTrue(true); // change here
-      System.out.println("Result of 'testpostImage': " + result.getResponse().trim());
-    } catch (Exception e) {
-      e.printStackTrace();
-      fail("Exception: " + e);
-    }
-  }
-
-  /**
-   * 
-   * Test for the mygetter method.
-   * 
-   */
-  @Test
-  public void testmygetter() {
-    MiniClient c = new MiniClient();
-    c.setAddressPort(HTTP_ADDRESS, HTTP_PORT);
-    try {
-
-      c.setLogin(testAgent.getIdentifier(), testPass);
-      ClientResponse result = c.sendRequest("GET", mainPath + "/getter", "",
-        MediaType.TEXT_PLAIN, MediaType.APPLICATION_JSON, new HashMap<String,String>());
-      assertTrue(true); // change here
-      System.out.println("Result of 'testmygetter': " + result.getResponse().trim());
-    } catch (Exception e) {
-      e.printStackTrace();
-      fail("Exception: " + e);
-    }
-  }
-
 
 
 
