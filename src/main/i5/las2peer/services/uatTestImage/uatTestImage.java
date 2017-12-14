@@ -110,7 +110,7 @@ public class uatTestImage extends RESTService {
 
     // image
     boolean image_condition = true;
-    if(image_condition) {
+    if (image_condition) {
       JSONObject image = new JSONObject();
       return Response.status(HttpURLConnection.HTTP_OK).entity(image.toJSONString()).build();
     }
