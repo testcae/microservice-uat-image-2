@@ -37,15 +37,6 @@ public class classes {
     public String getimageUrl() {
         return this.imageUrl;
     }
-    private String musicName;
-
-    public void setmusicName(String setValue) {
-        this.musicName = setValue;
-    }
-
-    public String getmusicName() {
-        return this.musicName;
-    }
 
     public JSONObject toJSON() {
 
@@ -53,7 +44,6 @@ public class classes {
         jo.put("imageName", this.imageName); 
         jo.put("imageId", this.imageId); 
         jo.put("imageUrl", this.imageUrl); 
-        jo.put("musicName", this.musicName); 
 
         return jo;
     }
@@ -63,7 +53,6 @@ public class classes {
         this.imageName = (String) jsonObject.get("imageName"); 
         this.imageId = ((Long) jsonObject.get("imageId")).intValue(); 
         this.imageUrl = (String) jsonObject.get("imageUrl"); 
-        this.musicName = (String) jsonObject.get("musicName"); 
 
     }
 
